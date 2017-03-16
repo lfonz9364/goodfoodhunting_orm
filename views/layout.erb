@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+  <!-- <%# if User.find_by(id: session[:user_id]) %> -->
+  <% if logged_in? %>
+  <!-- logged in as <%#= User.find(session[:user_id]).email %> -->
+  logged in as <%= current_user.email %>
+  <form action="/session" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>logout</button>
+  </form>
+  <% end %>
+  session: <%= session[:user_id] %>
+
+  <%= yield %>
+
+</body>

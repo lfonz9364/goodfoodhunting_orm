@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+
+img {
+  max-width: 20%;
+}
+
+a {
+  display: block;
+  margin: 1%;
+}

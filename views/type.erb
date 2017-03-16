@@ -1,0 +1,11 @@
+<h1>Types</h1>
+
+<a href="/dish_types/new">New Types</a>
+
+<% @dish_types.each do |type| %>
+<h2>
+<a href="/dish_types/<%= type.id %>">
+<%= type.name %>
+</a>
+</h2>
+<% end %>

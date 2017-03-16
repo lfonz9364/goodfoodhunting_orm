@@ -1,0 +1,16 @@
+<a href="/">Return to Home</a>
+<h1><%= @dish_type.name %></h1>
+<form action="/dish_types/<%= @dish_type.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>delete</button>
+</form>
+<a href="/dish_types/<%= @dish_type.id %>/edit">edit</a>
+
+<% @dishes.each do |dish| %>
+<h2>
+<a href="/dishes/<%= dish.id %>">
+<%= dish.name %>
+</a>
+</h2>
+  <img src="<%= dish.image_url %>" alt="">
+<% end %>
